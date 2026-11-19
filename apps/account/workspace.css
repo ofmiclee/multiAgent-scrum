@@ -1,0 +1,116 @@
+/* Restored from the project's original apps/desktop and packages/ui workspace.
+ * Scoped to authenticated pages: the login and Runner connection flows remain intact. */
+.workspace-layout {display:flex;height:100dvh;min-height:0;overflow:hidden;background:var(--surface);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:13px;color:var(--text);}
+.workspace-layout .workspace-sidebar {width:226px;min-width:226px;flex-shrink:0;display:flex;flex-direction:column;gap:0;padding:27px 14px 14px;background:var(--sidebar);border-right:1px solid var(--line);overflow:hidden;}
+.workspace-sidebar .brand {display:flex;gap:11px;padding:0 10px 30px;margin:0;font-size:17px;font-weight:750;letter-spacing:-.6px;}
+.workspace-sidebar .brand-mark {width:33px;height:33px;border-radius:10px;background:var(--accent);box-shadow:none;}
+.workspace-brand-sub {display:block;font-size:11px;letter-spacing:1.3px;font-weight:500;color:var(--muted);margin-top:3px;}
+.workspace-sidebar .workspace-context {display:flex;align-items:center;justify-content:flex-start;gap:10px;border:1px solid var(--line);padding:11px 10px;border-radius:8px;margin:0 3px 26px;background:var(--canvas);text-align:left;min-width:0;color:var(--text);}
+.workspace-context>span:nth-child(2) {min-width:0;flex:1;}
+.workspace-context strong {display:block;font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.workspace-context small {display:block;color:var(--muted);font-size:10px;margin-top:4px;}
+.workspace-context>svg {color:var(--muted);flex-shrink:0;}
+.workspace-avatar {height:30px;width:30px;flex-shrink:0;background:var(--accent-soft);border-radius:7px;display:grid;place-items:center;color:var(--muted);}
+.workspace-nav-caption {font-size:10px;letter-spacing:1.3px;color:var(--muted);margin:0 11px 10px;}
+.workspace-sidebar nav[aria-label="工作台导航"] {display:flex;flex-direction:column;gap:3px;}
+.workspace-sidebar nav button {display:flex;align-items:center;justify-content:flex-start;gap:10px;width:100%;border:0;background:transparent;padding:11px 12px;font-size:12px;color:var(--muted);font-weight:500;border-radius:7px;text-align:left;}
+.workspace-sidebar nav button:hover {background:var(--hover);}
+.workspace-sidebar nav button[aria-current="page"] {background:var(--accent-soft);color:var(--accent);}
+.project-navigation-slot {flex:1;min-height:0;overflow:auto;margin-top:28px;}
+.workspace-sidebar .project-tree {display:block;}
+.workspace-sidebar .project-tree-heading {padding:0 11px 6px;font-size:10px;letter-spacing:1.3px;}
+.workspace-sidebar .project-tree-heading button {width:auto;padding:4px;font-size:10px;}
+.workspace-sidebar .project-tree-item {color:var(--muted);}
+.workspace-sidebar .project-tree-boards {margin:0 6px 12px 23px;padding-left:13px;border-left:1px solid var(--line);}
+.workspace-sidebar .project-tree-boards button {padding:8px 10px;font-size:11px;}
+.workspace-sidebar .project-tree-boards button svg {width:5px;height:5px;background:currentColor;border-radius:2px;}
+.workspace-sidebar .project-tree-boards button svg>* {display:none;}
+.workspace-identity {display:flex;align-items:center;gap:9px;border-top:1px solid var(--line);padding:15px 3px 0;margin-top:auto;}
+.workspace-identity .profile-avatar {width:29px;height:29px;border-radius:50%;background:var(--accent-soft);color:var(--muted);font-size:11px;flex-shrink:0;}
+.workspace-identity strong {flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px;font-weight:500;color:var(--muted);}
+.workspace-identity button {padding:5px;color:var(--muted);}
+.workspace-layout .account-panel {display:block;flex:1;min-width:0;width:auto;max-width:none;padding:0;overflow:auto;background:var(--surface);}
+.workspace-layout .account-content {width:100%;max-width:none;min-height:100%;margin:0;padding:30px;}
+.workspace-layout .panel-footer {display:none;}
+.workspace-layout .account-content:has(>div:not([hidden])>div:not([hidden])>.original-board) {display:flex;flex-direction:column;padding:0;height:100%;min-height:0;overflow:hidden;}
+.workspace-layout .account-content:has(>div:not([hidden])>div:not([hidden])>.original-board)>div:has(.original-board),.workspace-layout .account-content:has(>div:not([hidden])>div:not([hidden])>.original-board)>div>div:has(.original-board) {height:100%;min-height:0;}
+.workspace-layout .account-content:has(>div:not([hidden])>div:not([hidden])>.original-board)>div:not([hidden]):has(.original-board) {flex:1;min-height:0;height:auto;}
+.workspace-layout .account-content:has(>div:not([hidden])>div:not([hidden])>.original-board)>.notice {flex-shrink:0;margin:12px 30px;}
+.workspace-layout [hidden] {display:none!important;}
+.workspace-layout .account-content:has(>div:not([hidden])>div:not([hidden])>.original-board)>header {display:none;}
+.workspace-layout .original-board {display:flex;flex-direction:column;height:100%;min-height:0;margin:0;border:0;border-radius:0;padding:0;}
+.workspace-topbar {height:65px;flex-shrink:0;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 29px;gap:14px;}
+.breadcrumbs {display:flex;align-items:center;gap:11px;font-size:11px;color:var(--muted);min-width:0;}
+.breadcrumbs h3 {font-size:11px;font-weight:400;margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.breadcrumbs strong {font-weight:500;color:var(--text);white-space:nowrap;}
+.breadcrumbs button {border:0;background:transparent;padding:0;color:var(--muted);}
+.topbar-right {display:flex;align-items:center;gap:18px;flex-shrink:0;}
+.topbar-right .secondary-button {font-size:11px;padding:8px 12px;min-height:0;font-weight:500;}
+.original-board .board-icon-button {display:inline-flex;align-items:center;justify-content:center;border:0;background:transparent;padding:5px;min-width:26px;min-height:26px;border-radius:5px;color:var(--muted);box-shadow:none;}
+.original-board .board-heading {display:flex;align-items:center;justify-content:space-between;padding:30px 30px 25px;gap:20px;flex-shrink:0;}
+.original-board .eyebrow {font-size:10px;color:var(--muted);letter-spacing:1.3px;margin:0 0 9px;}
+.original-board .board-heading h3 {display:flex;align-items:center;gap:11px;font-size:25px;font-weight:650;letter-spacing:-.65px;margin:0;}
+.original-board .title-count {font-size:11px;font-weight:500;color:var(--muted);background:var(--accent-soft);border-radius:5px;padding:2px 7px;letter-spacing:0;}
+.original-board .board-heading .primary-button {font-size:11px;font-weight:550;padding:9px 14px;min-height:0;border-radius:7px;box-shadow:none;}
+.original-board .metrics {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:0 30px 27px;border:1px solid var(--line);border-radius:9px;min-height:85px;background:var(--surface);flex-shrink:0;}
+.metrics>div {display:flex;align-items:center;gap:12px;padding:15px 23px;position:relative;}
+.metrics>div+div:before {content:"";position:absolute;left:0;top:24px;bottom:24px;width:1px;background:var(--line);}
+.metric-icon {height:36px;width:36px;border-radius:10px;display:grid;place-items:center;flex-shrink:0;}
+.original-board .lavender {background:var(--accent-soft);color:var(--muted);}.original-board .blue {background:var(--info-soft);color:var(--info);}.original-board .amber {background:var(--warning-soft);color:var(--warning);}.original-board .green {background:var(--success-soft);color:var(--success);}
+.metrics small {display:block;color:var(--muted);font-size:10px;margin-bottom:6px;}
+.metrics strong {font-size:21px;font-weight:650;letter-spacing:-.7px;}
+.metrics em {font-size:11px;color:var(--muted);font-weight:400;font-style:normal;margin-left:8px;letter-spacing:0;white-space:nowrap;}
+.board-toolbar {display:flex;align-items:center;padding:0 30px;height:49px;border-bottom:1px solid var(--line);gap:19px;flex-shrink:0;}
+.board-tab {display:flex;gap:7px;align-items:center;font-size:11px;font-weight:600;color:var(--accent);align-self:stretch;border-bottom:2px solid var(--accent);white-space:nowrap;}
+.board-scope {font-size:11px;color:var(--muted);white-space:nowrap;}
+.toolbar-filters {display:flex;align-items:center;margin-left:auto;gap:11px;min-width:0;}
+.board-search,.board-filter {display:flex;align-items:center;flex-direction:row;gap:7px;margin:0;color:var(--muted);}
+.original-board .board-search input {padding:6px 0;width:135px;border:1px solid transparent;font-size:10px;background:transparent;height:auto;box-shadow:none;border-radius:0;}
+.board-filter {border-left:1px solid var(--line);padding-left:13px;}
+.original-board .board-filter select {border:1px solid transparent;font-size:10px;padding:5px 2px;width:92px;color:var(--muted);min-height:0;background:var(--surface);}
+.original-board .board-search input:focus,.original-board .board-filter select:focus {border-color:var(--focus);outline:none;box-shadow:none;}
+.original-board .scrum-columns {display:flex;flex:1;min-height:0;overflow:auto;gap:16px;padding:21px 26px 30px;margin:0;background:var(--canvas);align-items:stretch;border:0;}
+.original-board .scrum-column {width:222px;min-width:222px;flex-shrink:0;background:transparent;border:0;border-radius:0;padding:0;}
+.original-board .scrum-column.story-column {width:240px;min-width:240px;border-right:1px solid var(--line);padding-right:19px;margin-right:3px;}
+.original-board .scrum-column>header {display:flex;align-items:center;justify-content:flex-start;gap:8px;min-height:27px;color:var(--muted);margin:0 0 19px;}
+.original-board .scrum-column h2 {font-size:11px;font-weight:600;color:var(--text);letter-spacing:.2px;margin:0;}
+.original-board .scrum-column>header>span {font-size:10px;background:var(--hover);padding:2px 5px;border-radius:4px;color:var(--muted);margin-left:0;}
+.original-board .scrum-column>header>button {margin-left:auto;}
+.original-board .story-column>header>svg {color:var(--muted);}.original-board .status-running>header>svg {color:var(--info);}.original-board .status-review>header>svg {color:var(--warning);}.original-board .status-done>header>svg {color:var(--success);}.original-board .status-failed>header>svg {color:var(--danger);}
+.original-board .scrum-card {display:block;text-align:left;padding:14px;border:1px solid var(--line);background:var(--surface);white-space:normal;box-shadow:none;border-radius:8px;position:relative;width:100%;margin:0 0 11px;color:var(--text);}
+.original-board .scrum-card:hover {background:var(--surface);border-color:var(--line-strong);box-shadow:none;}
+.original-board .story-card {background:var(--surface);border-color:var(--line);}
+.original-board .card-overline {display:flex;align-items:center;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:10px;}
+.card-overline>span {display:flex;align-items:center;gap:4px;}
+.original-board .task-code {font-size:11px;letter-spacing:.6px;font-weight:500;}
+.original-board .pill {font-size:11px;padding:3px 6px;border-radius:4px;font-weight:400;}
+.original-board .scrum-card strong {display:block;font-size:12px;line-height:1.7;margin-bottom:7px;overflow-wrap:anywhere;}
+.original-board .scrum-card>p {color:var(--muted);font-size:10px;line-height:1.75;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:17px;margin:0;}
+.original-board .card-tags {display:flex;gap:5px;margin-top:14px;flex-wrap:wrap;}
+.original-board .tag {display:flex;align-items:center;gap:3px;font-size:11px;padding:3px 5px;border:1px solid var(--line);color:var(--muted);border-radius:4px;}
+.original-board .scrum-card footer {border-top:1px solid var(--line);padding-top:11px;margin-top:13px;font-size:11px;color:var(--muted);display:flex;align-items:center;justify-content:space-between;gap:5px;}
+.original-board .compact-empty {border:1px dashed var(--line);border-radius:8px;min-height:70px;display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--muted);background:transparent;margin:0;padding:14px;}
+.original-board>.form-actions {padding:12px 30px;margin:0;border-top:1px solid var(--line);flex-shrink:0;}
+.original-board>.notice,.original-board>p[role="status"] {margin:12px 30px;flex-shrink:0;}
+@media(max-width:850px){
+  .workspace-layout {display:block;height:auto;min-height:100dvh;overflow:visible;}
+  .workspace-layout .workspace-sidebar {width:100%;min-width:0;padding:18px;overflow:visible;}
+  .workspace-sidebar .brand {padding:0 0 18px;}.workspace-sidebar .workspace-context {margin:0 0 16px;}
+  .workspace-sidebar nav[aria-label="工作台导航"] {flex-direction:row;flex-wrap:wrap;}.workspace-sidebar nav[aria-label="工作台导航"] button {width:auto;}
+  .project-navigation-slot {max-height:180px;margin-top:18px;}.workspace-sidebar .project-tree {max-height:none;}
+  .workspace-identity {margin-top:16px;}.workspace-layout .account-content {padding:24px 18px;}
+  .workspace-layout .account-content:has(>div:not([hidden])>div:not([hidden])>.original-board) {height:auto;overflow:visible;}
+  .workspace-layout .original-board {height:auto;min-height:680px;}
+  .workspace-topbar {padding:0 18px;}.breadcrumbs {gap:7px;}.breadcrumbs h3 {max-width:130px;}
+  .original-board .board-heading {padding:26px 18px;}.original-board .metrics {margin:0 18px 20px;grid-template-columns:repeat(2,minmax(0,1fr));}
+  .metrics>div {padding:15px 12px;gap:8px;}.metrics>div:nth-child(3):before {display:none;}
+  .metrics em {display:block;margin:2px 0 0;}.metrics small {margin-bottom:3px;}
+  .board-toolbar {padding:0 18px;height:auto;min-height:49px;flex-wrap:wrap;gap:10px;}.board-tab {padding:15px 0;}
+  .toolbar-filters {flex:1 1 100%;margin:0 0 12px;justify-content:space-between;}.board-search {flex:1;}.original-board .board-search input {width:100%;font-size:12px;}
+  .original-board .scrum-columns {flex:none;max-height:650px;min-height:360px;padding:21px 18px 30px;}
+  .topbar-right {gap:6px;}.topbar-right .secondary-button {padding:6px;font-size:10px;}.topbar-right .secondary-button svg {display:none;}
+  .original-board .board-heading h3 {font-size:23px;}.original-board .board-heading {gap:10px;}
+}
+.original-board .scrum-card footer span {font-size:11px;color:var(--muted);}
+.original-board .scrum-card .card-overline>span {font-size:11px;}
+.original-board .scrum-card .tag {font-size:11px;}

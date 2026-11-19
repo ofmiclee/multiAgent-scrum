@@ -1,0 +1,50 @@
+.members-page {max-width:1100px;margin:0;min-width:0}
+.members-page .workspace-page-heading h1 {font-size:23px;overflow-wrap:anywhere}
+.member-add-form {display:flex;align-items:flex-end;gap:12px;padding:16px 0 20px;border-bottom:1px solid var(--line)}
+.member-add-form label {display:grid;gap:8px;min-width:160px;font-size:12px}
+.member-add-form label:first-child {flex:1;max-width:400px}
+.member-add-form select,.member-table select {width:100%;min-height:36px;padding:7px 30px 7px 10px;background:var(--surface);border:1px solid var(--line);border-radius:6px;color:var(--text);font:inherit}
+.member-table-scroll {overflow-x:auto}
+.member-table-scroll:focus-visible {outline:2px solid var(--focus);outline-offset:3px}
+.member-table {width:100%;border-collapse:collapse;text-align:left;font-size:13px}
+.member-table th {height:38px;font-size:12px;font-weight:500;color:var(--muted);background:var(--canvas);white-space:nowrap}
+.member-table td,.member-table th {padding:10px 14px;border-bottom:1px solid var(--line)}
+.member-table td {height:54px}
+.member-table td:nth-child(2) {min-width:140px;width:185px}
+.member-table td:nth-child(3) {white-space:nowrap;color:var(--muted)}
+.member-table th:last-child,.member-table td:last-child {text-align:right}
+.member-table select {min-width:115px}
+.member-name {display:flex;align-items:center;gap:12px;min-width:120px;max-width:380px}
+.member-name strong {font-weight:500;overflow-wrap:anywhere;min-width:0}
+.member-avatar {display:grid;place-items:center;flex-shrink:0;width:32px;height:32px;border-radius:50%;background:var(--accent-soft);color:var(--text);font-weight:600}
+.member-inviter {display:block;max-width:32ch;margin-top:5px;color:var(--muted);white-space:normal;overflow-wrap:anywhere}
+.member-remove {display:inline-grid;place-items:center;background:none;border:0;border-radius:4px;width:32px;height:32px;color:var(--muted);cursor:pointer}
+.member-remove:hover {color:var(--danger);background:var(--danger-soft)}
+.member-approvals {margin-top:28px;border-top:1px solid var(--line);padding-top:20px}
+.member-approvals h3 {font-size:15px}
+.invitation-dialog {width:min(780px,calc(100vw - 32px))}
+.invitation-layout {display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.invitation-preview {display:flex;flex-direction:column;align-items:center;text-align:center;padding:24px 16px;background:var(--canvas);border-radius:6px;min-width:0}
+.invitation-preview>svg {color:var(--accent)}
+.invitation-preview h3 {font-size:16px;line-height:1.6;margin:16px 0 10px;overflow-wrap:anywhere}
+.invitation-preview strong {font-size:14px;overflow-wrap:anywhere;max-width:100%}
+.invitation-qr {display:grid;place-items:center;width:196px;height:196px;flex-shrink:0;background:var(--surface);color:var(--muted);margin:24px 0 16px;border-radius:6px}
+.invitation-preview p {margin:4px 0;font-size:12px;color:var(--muted)}
+.invitation-controls {min-width:0;padding:4px 0}
+.invitation-org {display:flex;align-items:center;gap:10px;margin-bottom:24px;font-size:14px;overflow-wrap:anywhere}
+.invitation-org strong {min-width:0}
+.invitation-controls label {display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:13px;margin-top:20px}
+.invitation-controls input[type=number] {width:66px;padding:7px;border:1px solid var(--line);border-radius:4px;font:inherit}
+.invitation-controls input[type=range] {width:100%;accent-color:var(--accent);margin:14px 0 4px}
+.range-labels {display:flex;justify-content:space-between;color:var(--muted);font-size:11px}
+.invitation-policy {font-size:12px;line-height:1.7;color:var(--muted);margin:20px 0}
+.invitation-controls .invite-url-label {display:grid;gap:8px;margin-bottom:16px}
+.invitation-controls .invite-url-label input {width:100%;min-width:0;max-width:none;padding:8px;border:1px solid var(--line);border-radius:4px;font:inherit}
+.join-invitation {max-width:520px;margin:0;display:flex;align-items:flex-start;flex-direction:column;text-align:left;gap:12px}
+.join-invitation h1 {font-size:23px}.join-invitation h2 {font-size:18px;overflow-wrap:anywhere}.join-invitation p {margin:0;color:var(--muted);line-height:1.7}
+@media(max-width:650px){.member-add-form{flex-wrap:wrap}.member-add-form label{flex:1;min-width:130px}.members-page .workspace-page-heading{align-items:flex-start;gap:16px}.member-table td,.member-table th{padding:10px}.invitation-layout{grid-template-columns:1fr;gap:20px}.invitation-preview{padding:16px}.invitation-qr{margin:16px 0}.member-name{max-width:190px}}
+
+.member-table tbody tr:hover {background:var(--hover)}
+.member-table select:focus,.member-add-form select:focus,.invitation-controls input:focus {border-color:var(--focus);outline:none;box-shadow:none}
+.members-page :is(button,a):focus-visible {outline:2px solid var(--focus);outline-offset:3px}
+@media(any-pointer:coarse){.member-remove{width:44px;height:44px}.member-add-form select,.member-table select{min-height:44px}}

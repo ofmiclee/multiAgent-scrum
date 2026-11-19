@@ -1,0 +1,22 @@
+services:
+  postgres:
+    image: postgres:17-bookworm
+    container_name: mas-next-local-pg
+    labels:
+      app: multiagent-scrum-next
+    environment:
+      POSTGRES_USER: mas_local
+      POSTGRES_PASSWORD: mas_local_dev_only
+      POSTGRES_DB: mas_next
+    ports:
+      - "127.0.0.1:55439:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U mas_local -d mas_next"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+
+volumes:
+  postgres-data:

@@ -1,0 +1,67 @@
+{
+  "name": "multiagent-scrum-next",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Human-owned requirements, durable Scrum workflows, and local AI agent execution",
+  "engines": {
+    "node": ">=24.8.0"
+  },
+  "scripts": {
+    "dev": "vite --config vite.account.config.ts",
+    "build": "npm run build:account",
+    "build:account": "node scripts/build-account-helper.mjs && tsc --noEmit && vite build --config vite.account.config.ts",
+    "typecheck": "tsc --noEmit",
+    "start": "npm run identity:local",
+    "identity:local": "node --env-file-if-exists=.env --import tsx services/identity/local-main.ts",
+    "runner:connect": "node --import tsx services/runner/device-main.ts",
+    "runner:dsh": "node --import tsx services/runner/device-account-main.ts",
+    "runner:codex": "node --import tsx services/runner/device-codex-main.ts",
+    "runner:bind-code": "node --import tsx services/runner/device-bind-code-main.ts",
+    "runner:setup": "node --import tsx services/runner/device-setup-main.ts",
+    "runner:doctor": "node --import tsx services/runner/device-doctor-main.ts",
+    "package:runner:macos": "node scripts/package-runner-macos.mjs",
+    "test": "node --import tsx --test --test-concurrency=1 tests/*.test.ts apps/account/*.test.ts",
+    "test:account-ui": "playwright test --config playwright.account.config.ts",
+    "test:account": "node --import tsx --test --test-concurrency=1 apps/account/*.test.ts tests/coordinator.test.ts tests/membership.test.ts tests/body-composer.test.ts tests/profile.test.ts tests/project-files.test.ts tests/typesafe-assessment.test.ts tests/runner-download.test.ts tests/device-launch-rebind.test.ts",
+    "probe:codex": "node --import tsx scripts/probe-codex.ts",
+    "db:up": "node scripts/local-db.mjs",
+    "db:stop": "docker stop mas-next-local-pg"
+  },
+  "dependencies": {
+    "@radix-ui/react-dropdown-menu": "2.2.1",
+    "@radix-ui/react-tooltip": "1.4.1",
+    "@tiptap/extension-image": "3.31.3",
+    "@tiptap/react": "3.31.3",
+    "@tiptap/starter-kit": "3.31.3",
+    "better-auth": "1.7.4",
+    "lucide-react": "1.44.0",
+    "pg": "8.23.0",
+    "qrcode.react": "4.2.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "sharp": "0.35.4",
+    "zod": "4.6.1"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.5.8",
+    "@playwright/test": "1.63.0",
+    "@types/node": "22.20.2",
+    "@types/pg": "8.23.1",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.1",
+    "tsx": "4.23.13",
+    "typescript": "7.0.2",
+    "vite": "8.3.0"
+  },
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ofmiclee/multiAgent-scrum.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ofmiclee/multiAgent-scrum/issues"
+  },
+  "homepage": "https://github.com/ofmiclee/multiAgent-scrum#readme"
+}

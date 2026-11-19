@@ -1,0 +1,36 @@
+.project-files-page {max-width:100%;min-width:0;color:var(--text)}
+.project-files-heading {display:flex;align-items:baseline;gap:8px 16px;flex-wrap:wrap;margin-bottom:16px}
+.project-files-heading h2 {margin:0;font-size:16px;line-height:1.5;font-weight:650}
+.project-files-heading span,.project-files-muted,.project-files-status,.project-files-notice {font-size:12px;line-height:1.7;color:var(--muted)}
+.project-files-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 16px}
+.project-files-panel {min-width:0;max-width:960px;padding:20px;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+.project-files-panel h3 {margin:0 0 14px;font-size:13px;font-weight:650}
+.project-files-panel dl {display:grid;grid-template-columns:90px minmax(0,1fr);gap:8px 16px;margin:0;font-size:12px;line-height:1.7}
+.project-files-panel dt {color:var(--muted)}
+.project-files-panel dd {margin:0;overflow-wrap:anywhere;color:var(--text)}
+.project-files-panel label {display:flex;flex-direction:column;gap:6px;margin:10px 0;font-size:12px;font-weight:500;color:var(--muted)}
+.project-files-panel input,.project-files-panel select,.project-files-panel textarea {box-sizing:border-box;width:100%;min-width:0;min-height:36px;padding:8px 10px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--text);font:inherit;font-size:13px;font-weight:400}
+.project-files-panel textarea {height:280px;min-height:180px;padding:12px;resize:vertical;font-family:ui-monospace,"SFMono-Regular",Consolas,monospace;line-height:1.7;tab-size:2}
+.project-files-documents {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:16px;padding-top:16px;border-top:1px solid var(--line)}
+.project-files-documents label {margin:0}
+.project-files-editor {margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+.project-files-panel button {min-height:34px;padding:7px 13px;border:1px solid transparent;border-radius:6px;background:var(--accent);color:var(--surface);font-size:12px;font-weight:600;cursor:pointer}
+.project-files-panel button:disabled {opacity:.45;cursor:default}
+.project-files-actions {display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.project-files-actions button:not(:first-child),.project-files-directory>button {background:var(--surface);color:var(--text);border:1px solid var(--line)}
+.project-files-actions button:not(:first-child):hover:not(:disabled),.project-files-directory>button:hover:not(:disabled) {background:var(--hover)}
+.project-files-save {padding-top:16px;border-top:1px solid var(--line)}
+.project-files-directory {display:flex;align-items:flex-end;gap:8px}
+.project-files-directory>label {flex:1;min-width:0;margin-bottom:0}
+.project-files-directory>button {flex:none;min-height:36px}
+.project-files-check {display:flex!important;flex-direction:row!important;align-items:center;gap:8px!important}
+.project-files-check input {width:16px;min-height:0;height:16px;accent-color:var(--accent)}
+.project-files-notice {margin:12px 0 0}
+.project-files-load-error {max-width:560px;padding:16px;border:1px solid var(--line);border-radius:6px;background:var(--canvas);font-size:13px}
+.project-files-load-error p {margin:0 0 12px;line-height:1.7}
+.project-files-fields {border:0;padding:0;margin:0;min-width:0}
+.project-files-panel input:focus,.project-files-panel select:focus,.project-files-panel textarea:focus {border-color:var(--focus);outline:none;box-shadow:none}
+.project-files-page button:focus-visible {outline:2px solid var(--focus);outline-offset:3px}
+.project-files-check input:focus-visible {outline:2px solid var(--focus);outline-offset:3px}
+@media(max-width:760px){.project-files-grid,.project-files-documents{grid-template-columns:1fr}.project-files-panel{padding:16px}.project-files-panel input,.project-files-panel select,.project-files-panel textarea{font-size:16px}.project-files-directory{align-items:stretch;flex-wrap:wrap}.project-files-directory>label{flex-basis:100%}.project-files-directory>button{align-self:flex-start}.project-files-panel textarea{height:240px}}
+@media(max-width:700px),(any-pointer:coarse){.project-files-panel button{min-height:44px}}

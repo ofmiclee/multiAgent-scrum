@@ -1,0 +1,76 @@
+.personal-agents-layout{display:grid;grid-template-columns:minmax(0,1fr);gap:20px;align-items:start;margin-top:20px}
+.personal-agents-layout.has-detail{grid-template-columns:minmax(240px,1fr) minmax(320px,400px)}
+.personal-agents-inventory{min-width:0}
+.personal-agent-list-heading{display:flex;justify-content:space-between;padding:0 16px 10px;color:var(--muted);font-size:11px;border-bottom:1px solid var(--line)}
+.personal-agent-row{display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;padding:14px 16px;border:0;border-bottom:1px solid var(--line);border-radius:0;background:transparent;color:var(--text);font:inherit;text-align:left;cursor:pointer}
+.personal-agent-row:hover:not(:disabled){background:var(--hover)}
+.personal-agent-row[aria-pressed="true"]{background:var(--accent-soft)}
+.personal-agent-row:focus-visible{outline:2px solid var(--focus);outline-offset:-2px}
+.personal-agent-row:disabled{cursor:wait}
+.personal-agent-identity{display:grid;gap:4px;min-width:0;overflow-wrap:anywhere}
+.personal-agent-identity strong{font-size:13px;font-weight:650;line-height:1.6}
+.personal-agent-model{font-size:12px;color:var(--muted)}
+.personal-agent-device{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--muted);overflow-wrap:anywhere}
+.personal-agent-device svg{flex:none}
+.personal-agent-row-status{display:flex;align-items:center;gap:12px;flex:none;color:var(--muted)}
+.personal-agent-capacity{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:20px 0;padding:16px 16px 0;border-top:1px solid var(--line)}
+.personal-agent-capacity .field-label{margin:0}.personal-agent-capacity .field-hint{margin:4px 0 0}
+.personal-agent-capacity>select{width:68px;min-height:34px;margin-left:auto;padding:6px 10px}
+.personal-agent-capacity>p{flex-basis:100%}
+.personal-agent-detail{min-width:0;position:sticky;top:16px;background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:clip}
+.personal-agent-detail-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:16px 18px;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:1;background:var(--surface)}
+.personal-agent-detail-heading>div:first-child{min-width:0}
+.personal-agent-detail-heading h2{margin:0 0 2px;font-size:17px;line-height:1.5;font-weight:650;overflow-wrap:anywhere}
+.personal-agent-detail-actions{display:flex;gap:4px;flex:none}
+.agent-detail-icon{display:grid;place-items:center;width:32px;height:32px;padding:0;border:0;border-radius:6px;background:transparent;color:var(--muted);cursor:pointer}
+.agent-detail-icon:hover:not(:disabled){background:var(--accent-soft);color:var(--accent)}
+.agent-detail-icon:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.agent-detail-icon:disabled{opacity:.5;cursor:default}
+.personal-agent-detail-body{display:grid;gap:16px;padding:18px;min-width:0}
+.agent-detail-section{display:grid;gap:12px;min-width:0}
+.agent-detail-section+.agent-detail-section{padding-top:16px;border-top:1px solid var(--line)}
+.agent-detail-section h3{margin:0;font-size:13px;line-height:1.6;font-weight:650}
+.agent-detail-section-heading{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.agent-detail-enabled{display:flex;align-items:center;gap:6px;font-size:12px;white-space:nowrap}
+.agent-detail-enabled input{width:15px;height:15px;min-height:0;margin:0;accent-color:var(--accent)}
+.agent-detail-section .story-form{margin:0;display:grid;gap:6px}
+.agent-detail-section .story-form label,.agent-detail-fields label,.agent-detail-section .field-label{font-size:12px;margin:0}
+.agent-detail-section select{width:100%;min-width:0;min-height:36px;padding:7px 10px;font:inherit;font-size:13px;color:var(--text);border:1px solid var(--line);border-radius:6px;background:var(--surface)}
+.agent-detail-section .agent-credential-select{display:grid;gap:8px}
+.agent-detail-section .form-actions{margin:4px 0 0;gap:8px}
+.agent-detail-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.agent-detail-fields label{display:block;color:var(--muted)}
+.agent-detail-fields select{display:block;margin-top:6px}
+.agent-detail-values{display:grid;gap:8px;margin:0}
+.agent-detail-values>div{display:grid;grid-template-columns:76px minmax(0,1fr);gap:12px;font-size:12px;line-height:1.8}
+.agent-detail-values dt{color:var(--muted)}.agent-detail-values dd{margin:0;overflow-wrap:anywhere}
+.agent-detail-instructions{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px;line-height:1.8;color:var(--muted)}
+.personal-agent-detail .agent-readiness-tabs{gap:10px;margin:0}
+.personal-agent-detail .agent-readiness-tab{padding:0;border:0;background:transparent;font-size:11px;gap:3px}
+.personal-agent-detail-footer{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 18px;border-top:1px solid var(--line)}
+.personal-agent-detail-footer .field-hint{margin:0}
+.agent-detail-delete{display:inline-flex;align-items:center;gap:6px;border:0;padding:4px 0;background:transparent;color:var(--danger);font:inherit;font-size:12px;cursor:pointer}
+@media(max-width:1050px){.personal-agents-layout.has-detail{grid-template-columns:minmax(180px,1fr) minmax(300px,360px);gap:16px}.personal-agent-row{padding:16px 12px;gap:10px}.personal-agent-row-status{flex-direction:column;align-items:flex-end;gap:4px}}
+@media(max-width:760px){.personal-agents-layout.has-detail{grid-template-columns:minmax(0,1fr)}.personal-agents-layout.has-detail>.personal-agents-inventory{display:none}.personal-agent-detail{position:static;width:100%}.personal-agent-detail-heading{padding:16px}.personal-agent-detail-body{padding:16px}.personal-agent-detail-footer{padding:14px 16px}.personal-agent-row-status{flex-direction:row;align-items:center}.agent-detail-section select{font-size:16px}.personal-agent-detail-heading h2{font-size:17px}.agent-detail-icon{width:44px;height:44px}.personal-agent-detail-heading{gap:8px}}
+@media(any-pointer:coarse){.agent-detail-icon{width:44px;height:44px}.agent-detail-delete{min-height:44px}}
+
+.personal-agents-page {max-width:1180px;min-width:0}
+.agent-detail-icon.is-primary {background:var(--accent);color:var(--surface)}
+.agent-detail-icon.is-primary:hover:not(:disabled) {background:var(--text);color:var(--surface)}
+.personal-agents-page .agent-create {max-width:760px;margin:20px 0;padding:20px;background:var(--surface)}
+.agent-create-group {border:0;padding:0;margin:0;min-width:0}
+.agent-create-group+ .agent-create-group {margin-top:24px;padding-top:20px;border-top:1px solid var(--line)}
+.agent-create-group legend {padding:0;margin:0 0 14px;font-size:13px;font-weight:650;color:var(--text)}
+.agent-create-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.agent-create-field {min-width:0}
+.agent-create .agent-create-group .field-label {margin:14px 0 6px;font-size:12px}
+.agent-create .agent-create-field .field-label {margin-top:0}
+.agent-create-group>legend+.field-label {margin-top:0}
+.agent-create .agent-create-group .story-form {margin-top:14px}
+.agent-create .agent-create-group select,.agent-create .agent-create-group input,.agent-create .agent-create-group textarea {width:100%;max-width:none;min-width:0;background:var(--surface)}
+.agent-create .agent-create-group textarea {min-height:88px}
+.agent-create .agent-create-group .runner-required {display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:12px;margin-top:12px;border:1px solid var(--line);border-radius:6px;background:var(--canvas)}
+.agent-create .runner-required p {margin:0;font-size:12px;color:var(--muted)}
+.agent-create>form>.form-actions {padding-top:18px;border-top:1px solid var(--line)}
+@media(max-width:760px){.personal-agents-page .agent-create{padding:16px}.agent-create-grid{grid-template-columns:1fr;gap:14px}.agent-create-group+.agent-create-group{margin-top:20px;padding-top:16px}}
+@media(max-width:650px),(any-pointer:coarse){.personal-agents-page .agent-page-tabs .agent-tab-close{width:44px;height:44px}.personal-agents-page .agent-detail-enabled,.personal-agents-page .agent-detail-delete,.personal-agents-page .text-button{min-height:44px}.personal-agent-capacity>select{min-height:44px}}
