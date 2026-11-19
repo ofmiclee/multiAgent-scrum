@@ -34,4 +34,14 @@ Workflow design was informed by agent-scrum commit `e901b4cfc923d016c8841a658606
 
 `services/runner/redaction.mjs` originated in the author's FruitBuddy project, commit `8d2135532e05d2607ce23f77c2e08d99ada9ebde`, path `services/control-plane/src/redaction.mjs`. That file is published here under this repository's Apache-2.0 license. This grant covers the included file and does not grant a license to other FruitBuddy or legacy repository contents.
 
-Codex, DSH and Claude Code are external execution providers. Their binaries, user profiles and account resources are not included in this source repository. Integration code does not change a provider's own license or service terms. Packaging an external provider requires retaining its applicable notices and following its redistribution terms.
+## Native Runner and downloaded runtimes
+
+`apps/runner-macos/main.swift` is this project's independently written AppKit launcher, licensed under Apache-2.0. It calls the existing Runner protocol; it is not extracted or decompiled from the former private launcher binary.
+
+The source build downloads Node.js 24.22.3 from nodejs.org with a pinned SHA-256 and retains its complete `LICENSE` as `Contents/Resources/Node-LICENSE.txt`. Node.js and its bundled components retain the terms in that file.
+
+Codex 0.162.1 for macOS arm64 is installed from the official `@openai/codex` npm distribution using the lockfile in `deploy/runner/codex-runtime/`. Its package LICENSE, NOTICE and vendor resource notices are retained in the app. DSH 0.1.2-alpha.2 is installed from the official `@deepseek-ai/dsh` npm package (MIT, copyright 2026 DeepSeek) using `deploy/runner/dsh-runtime/`; the complete dependency tree, including its individual license files, is retained. The bundled Runner also retains the installed Zod MIT license in its `licenses/` directory.
+
+DSH includes sharp/libvips native dependencies with separate LGPL terms. Binary redistributors must satisfy the applicable source, modification and relinking obligations, in addition to preserving notices. The pinned libvips package's corresponding build recipes and source references are available in [sharp-libvips v1.3.3](https://github.com/lovell/sharp-libvips/tree/v1.3.3). This repository publishes source and build instructions, not prebuilt DMG assets or a replacement license for these dependencies.
+
+Codex, DSH and Claude Code remain external execution providers. Their binaries, user profiles and account resources are not committed to this source repository. Integration code does not change a provider's license or service terms. Local packaging does not read or copy the builder's installed Runner, model accounts or credentials.
